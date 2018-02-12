@@ -1,0 +1,30 @@
+{
+  "name": "js-ccxt-importer",
+  "version": "0.9.1",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnaudj/js-ccxt-importer.git"
+  },
+  "keywords": [
+    "ccxt",
+    "exchanges",
+    "import",
+    "trades"
+  ],
+  "author": "arnaudj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnaudj/js-ccxt-importer/issues"
+  },
+  "homepage": "https://github.com/arnaudj/js-ccxt-importer#readme",
+  "dependencies": {
+    "ccxt": "^1.10.1088",
+    "commander": "^2.14.1"
+  }
+}
