@@ -1,3 +1,3 @@
-= Import
+== Import
 
 Run: `npm start -- -i myexchangehere` to import for a given exchange.
