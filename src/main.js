@@ -1,5 +1,6 @@
 #!/usr/bin / env node
 /**
+ * setopt histignorespace
  * npm start -- -i (-p http://proxyadress/baseproxyscripturl/)
  */
 'use strict';
@@ -10,6 +11,7 @@ const log = console.log;
 cli
   .version('0.1.0')
   .option('-i, --import <exchange>', 'Import for exchange')
+  .option('-o, --output <file>', 'Json output file')
   .option('-p, --proxy [proxyAddress]', 'Proxy URL')
   .option('-l, --list', 'List supported exchanges')
   .option('-u, --uid <uid>', 'Credentials: exchange user id')
@@ -58,5 +60,21 @@ async function runForExchange(exchangeName) {
   }
 
   let trades = await exchange.fetchMyTrades();
-  log('Trades: \n' + JSON.stringify(trades));
+  let tradesStr = JSON.stringify(trades);
+  log('Trades found: %d\n', trades.length);
+
+  if (cli.output && cli.output.length > 2) {
+    log('Exporting to %s', cli.output);
+
+    const fs = require('fs');
+    fs.writeFileSync(cli.output, tradesStr, (err) => {
+      if (err)
+        throw err;
+    });
+  } else {
+    log(tradesStr);
+  }
+
+  log('Done.');
+
 }
