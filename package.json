@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/arnaudj/js-ccxt-importer#readme",
   "dependencies": {
-    "ccxt": "^1.10.1088",
+    "ccxt": "^1.95.43",
     "commander": "^2.14.1"
   },
   "devDependencies": {
